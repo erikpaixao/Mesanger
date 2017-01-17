@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+    <head>
+        <title>Mesanger - Gerenciador de Mesada</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <!--<link href="css/style.css" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <base href="/">
+    </head>
+    <body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li ng-class="{active: activetab == '/pai'}"><a href="/pai">Pai</a></li>
+                <li ng-class="{active: activetab == '/filho'}"><a href="/filho">Filho</a></li>
+                <li ng-class="{active: activetab == '/mesada'}"><a href="/mesada">Mesada</a></li>
+                <li ng-class="{active: activetab == '/sobre'}"><a href="/sobre">Sobre</a></li>
+                <li ng-class="{active: activetab == '/contato'}"><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div ng-view></div>
+    </section>   
+    <footer>
+        
+    </footer>
+        
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="/resources/js/router.js"></script>
+    <script src="/controllers/controller.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    
+    </body>
+</html>
+
+
+  
+          
