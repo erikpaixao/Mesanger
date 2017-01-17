@@ -2,14 +2,30 @@ package br.e3.beans;
 
 import java.util.Collection;
 
-import br.e3.beans.util.Modificador;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-public class Mesada {
-	private Long id;
+import br.e3.beans.util.Modificador;
+import br.e3.util.BaseEntity;
+
+@Entity
+@AttributeOverride(name = "id", column = @Column(name = "pk_id"))
+public class Mesada extends BaseEntity<Long>{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1938779624453812029L;
+	
 	private Float valorMesada;
 	private Float valorAReceber;
+	@OneToMany
 	private Collection<Modificador> modificadores;
+	@OneToOne
 	private Pai pagador;
+	@OneToOne
 	private Filho recebedor;
 	
 	public Mesada() {
@@ -55,17 +71,5 @@ public class Mesada {
 	public void setRecebedor(Filho recebedor) {
 		this.recebedor = recebedor;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-
-	
 	
 }

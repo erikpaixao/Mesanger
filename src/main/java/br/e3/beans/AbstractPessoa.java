@@ -1,6 +1,12 @@
 package br.e3.beans;
 
-public abstract class AbstractPessoa {
+import br.e3.util.BaseEntity;
+
+public abstract class AbstractPessoa extends BaseEntity<Long> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8749628083234593150L;
 	private String nome;
 	private String sobreNome;
 	private Long id;

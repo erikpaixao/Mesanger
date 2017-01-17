@@ -1,14 +1,28 @@
 package br.e3.beans;
 
-import java.util.Collection;
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import br.e3.beans.util.Permissao;
 
+@Entity
+@AttributeOverride(name = "id", column = @Column(name = "pk_id"))
 public class Filho extends AbstractPessoa{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6323655942759291909L;
+	@ManyToOne
 	private Pai pai;
+	@OneToOne
 	private Mesada mesada;
-	private Collection<Permissao> permissoes;
+	@Enumerated
+	private Permissao permissao;
 	
 	public Filho() {
 		super();
@@ -25,11 +39,11 @@ public class Filho extends AbstractPessoa{
 	public void setMesada(Mesada mesada) {
 		this.mesada = mesada;
 	}
-	public Collection<Permissao> getPermissoes() {
-		return permissoes;
+	public Permissao getPermissao() {
+		return permissao;
 	}
-	public void setPermissoes(Collection<Permissao> permissoes) {
-		this.permissoes = permissoes;
+	public void setPermissoes(Permissao permissao) {
+		this.permissao = permissao;
 	}
 	
 }

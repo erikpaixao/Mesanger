@@ -18,11 +18,11 @@ public final class ServicePath {
 	// PRIVATE PATHS
 	///////////////////////////////////////////////////////////////
 
-	public static final String PACKAGEE_PATH = PRIVATE_ROOT_PATH + "/packagee";
+	public static final String PAI_PATH = PRIVATE_ROOT_PATH + "/pai";
 
-	public static final String PERMISSION_PATH = PRIVATE_ROOT_PATH + "/permission";
-
-	public static final String USER_PATH = PRIVATE_ROOT_PATH + "/user";
+	public static final String FILHO_PATH = PRIVATE_ROOT_PATH + "/filho";
+	
+	public static final String MESADA_PATH = PRIVATE_ROOT_PATH + "/mesada";
 
 	///////////////////////////////////////////////////////////////
 	// PUBLIC PATHS

@@ -1,12 +1,21 @@
 package br.e3.beans.util;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 import br.e3.beans.Mesada;
 
+@Entity
 public class Modificador {
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nomeModificador;
 	private Float soma;
 	private Boolean isDesconto;
+	@ManyToOne
 	private Mesada mesadaDoDesconto;
 	
 	public Modificador() {
