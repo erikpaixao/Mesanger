@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.e3.beans.Mesada;
 
 @Entity
@@ -16,6 +18,7 @@ public class Modificador {
 	private Float soma;
 	private Boolean isDesconto;
 	@ManyToOne
+	@JsonIgnore
 	private Mesada mesadaDoDesconto;
 	
 	public Modificador() {

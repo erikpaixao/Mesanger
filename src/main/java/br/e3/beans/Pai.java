@@ -1,6 +1,6 @@
 package br.e3.beans;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
@@ -29,7 +29,7 @@ public class Pai extends BaseEntity<Long> {
 	@Enumerated
 	private Permissao permissao;
 	@OneToMany
-	private Collection<Filho> filhos;
+	private List<Filho> filhos;
 
 	public Pai() {
 		super();
@@ -75,12 +75,14 @@ public class Pai extends BaseEntity<Long> {
 		this.permissao = permissao;
 	}
 
-	public Collection<Filho> getFilhos() {
+	public List<Filho> getFilhos() {
 		return filhos;
 	}
 
-	public void setFilhos(Collection<Filho> filhos) {
+	public void setFilhos(List<Filho> filhos) {
 		this.filhos = filhos;
 	}
+
+
 
 }

@@ -1,12 +1,14 @@
 package br.e3.beans;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.e3.beans.util.Modificador;
 import br.e3.util.BaseEntity;
@@ -22,10 +24,12 @@ public class Mesada extends BaseEntity<Long>{
 	private Float valorMesada;
 	private Float valorAReceber;
 	@OneToMany
-	private Collection<Modificador> modificadores;
+	private List<Modificador> modificadores;
 	@OneToOne
+	@JsonIgnore
 	private Pai pagador;
 	@OneToOne
+	@JsonIgnore
 	private Filho recebedor;
 	
 	public Mesada() {
@@ -48,11 +52,11 @@ public class Mesada extends BaseEntity<Long>{
 		this.valorAReceber = valorAReceber;
 	}
 
-	public Collection<Modificador> getModificadores() {
+	public List<Modificador> getModificadores() {
 		return modificadores;
 	}
 
-	public void setModificadores(Collection<Modificador> modificadores) {
+	public void setModificadores(List<Modificador> modificadores) {
 		this.modificadores = modificadores;
 	}
 

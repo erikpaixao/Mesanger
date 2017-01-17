@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.e3.beans.util.Permissao;
 import br.e3.util.BaseEntity;
 
@@ -27,6 +29,7 @@ public class Filho extends BaseEntity<Long>{
 	@Email @NotNull
 	private String email;
 	@ManyToOne
+	@JsonIgnore
 	private Pai pai;
 	@OneToOne
 	private Mesada mesada;
