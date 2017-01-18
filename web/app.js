@@ -1,6 +1,15 @@
-var app = angular.module('app',['ngRoute']);
- 
-app.config(function($routeProvider, $locationProvider)
+'use strict';
+
+var BASE_URL = 'http://localhost:8080/api';
+
+angular.module('app', ['ngRoute'])
+  .constant('SERVICE_PATH', {
+    'ROOT_PATH': BASE_URL,
+    'PUBLIC_PATH': BASE_URL + '/public',
+    'PRIVATE_PATH': BASE_URL + '/private'
+  })
+  
+.config(function($routeProvider, $locationProvider, $httpProvider)
 {
    // remove o # da url
    $locationProvider.html5Mode(true);
@@ -42,4 +51,6 @@ app.config(function($routeProvider, $locationProvider)
  
    // caso não seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });
+
+   $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 });

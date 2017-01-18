@@ -1,88 +1,73 @@
-package br.e3.beans;
+package br.e3.usuario;
 
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import javax.persistence.JoinColumn;
 
 import org.hibernate.validator.constraints.Email;
 
-import br.e3.beans.util.Permissao;
+import br.e3.permissao.PermissaoEntity;
 import br.e3.util.BaseEntity;
 
 @Entity
 @AttributeOverride(name = "id", column = @Column(name = "pk_id"))
-public class Pai extends BaseEntity<Long> {
+public class UsuarioEntity extends BaseEntity<Long> {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -4928804748609940544L;
 	private String nome;
 	private String sobrenome;
-	private String password;
 	@Email @NotNull
 	private String email;
-	@Enumerated
-	private Permissao permissao;
-	@OneToMany
-	private List<Filho> filhos;
-
-	public Pai() {
+	private String password;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "tb_user_permission", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "permission_id") )
+	private List<PermissaoEntity> permissoes;
+	public UsuarioEntity() {
 		super();
 	}
-
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	public String getSobrenome() {
 		return sobrenome;
 	}
-
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Permissao getPermissao() {
-		return permissao;
+	public String getPassword() {
+		return password;
 	}
-
-	public void setPermissao(Permissao permissao) {
-		this.permissao = permissao;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
-	public List<Filho> getFilhos() {
-		return filhos;
+	public List<PermissaoEntity> getPermissoes() {
+		return permissoes;
 	}
-
-	public void setFilhos(List<Filho> filhos) {
-		this.filhos = filhos;
+	public void setPermissoes(List<PermissaoEntity> permissoes) {
+		this.permissoes = permissoes;
 	}
-
-
-
+	
+	
+	
+	
+	
 }
+	

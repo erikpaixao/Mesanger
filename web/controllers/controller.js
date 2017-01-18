@@ -1,26 +1,28 @@
-app.controller('HomeCtrl', function($rootScope, $location)
+angular.module('app')
+
+.controller('HomeCtrl', function($scope, $rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
  
-app.controller('SobreCtrl', function($rootScope, $location)
+angular.module('app').controller('SobreCtrl', function($rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
  
-app.controller('ContatoCtrl', function($rootScope, $location)
+angular.module('app').controller('ContatoCtrl', function($rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
-app.controller('PaiCtrl', function($rootScope, $location)
+angular.module('app').controller('PaiCtrl', function($rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
-app.controller('FilhoCtrl', function($rootScope, $location)
+angular.module('app').controller('FilhoCtrl', function($rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
-app.controller('MesadaCtrl', function($rootScope, $location)
+angular.module('app').controller('MesadaCtrl', function($rootScope, $location)
 {
    $rootScope.activetab = $location.path();
 });
