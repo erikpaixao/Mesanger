@@ -64,10 +64,6 @@ public class UsuarioEntity extends BaseEntity<Long> {
 	public void setPermissoes(List<PermissaoEntity> permissoes) {
 		this.permissoes = permissoes;
 	}
-	
-	
-	
-	
-	
+		
 }
 	
