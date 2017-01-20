@@ -14,7 +14,7 @@ public class LoginDetailBean extends BaseBean implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
-	private final String name;
+	private final String nome;
 
 	private final String email;
 
@@ -22,8 +22,8 @@ public class LoginDetailBean extends BaseBean implements UserDetails {
 
 	private final Set<String> roles;
 
-	public LoginDetailBean(String name, String email, String passwordHash) {
-		this.name = name;
+	public LoginDetailBean(String nome, String email, String passwordHash) {
+		this.nome = nome;
 		this.email = email;
 		this.password = passwordHash;
 		this.roles = new HashSet<String>();
@@ -61,7 +61,7 @@ public class LoginDetailBean extends BaseBean implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return this.name;
+		return this.nome;
 	}
 
 	public String getEmail() {
